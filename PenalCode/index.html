@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Penal Code with Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- DataTables CSS (CDN) -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Penal Code Table with Calculator</h1>
+    <img src="image/LSPD-SEALS.png" alt="Deskripsi Foto" style="display: block; margin: 0 auto; max-width: 10%;">
+    
+    <!-- Tabel utama menggunakan DataTables -->
+    <table id="penalTable" class="display">
+      <thead>
+        <tr>
+          <th>Penal ID</th>
+          <th>Crime Description</th>
+          <th>Times (Minute)</th>
+          <th>Fines</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data untuk tampilan DataTables; data tambahan di script juga tersimpan dalam array -->
+        <tr>
+            <td>101</td>
+            <td>Criminal Threats</td>
+            <td>30</td>
+            <td>500</td>
+          </tr>
+        <tr>
+            <td>102</td>
+            <td>Assault</td>
+            <td>25</td>
+            <td>600</td>
+          </tr>
+        <tr>
+            <td>103</td>
+            <td>Assault on a Peace Officer</td>
+            <td>30</td>
+            <td>650</td>
+          </tr>
+          <tr>
+            <td>104</td>
+            <td>Assault on a State Employee</td>
+            <td>40</td>
+            <td>700</td>
+          </tr>
+          <tr>
+            <td>105</td>
+            <td>Assault with a Deadly Weapon</td>
+            <td>40</td>
+            <td>1150</td>
+          </tr>
+        <tr>
+            <td>106</td>
+            <td>Assault with a Deadly Weapon on a Peace Officer</td>
+            <td>50</td>
+            <td>1200</td>
+          </tr>
+          <tr>
+            <td>107</td>
+            <td>Battery</td>
+            <td>24</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>108</td>
+            <td>Battery on a Peace Officer</td>
+            <td>30</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>109</td>
+            <td>Battery on a State Employee</td>
+            <td>30</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>110</td>
+            <td>Aggravated Battery</td>
+            <td>36</td>
+            <td>850</td>
+          </tr>
+          <tr>
+            <td>111</td>
+            <td>Manslaughter</td>
+            <td>72</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>112</td>
+            <td>False Imprisonment</td>
+            <td>36</td>
+            <td>650</td>
+          </tr>
+          <tr>
+            <td>113</td>
+            <td>Kidnapping</td>
+            <td>56</td>
+            <td>660</td>
+          </tr>
+          <tr>
+            <td>114</td>
+            <td>Mayhem</td>
+            <td>82</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>115</td>
+            <td>Stalking</td>
+            <td>12</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>116</td>
+            <td>Human Trafficking</td>
+            <td>36</td>
+            <td>750</td>
+          </tr>
+          <tr>
+            <td>185</td>
+            <td>Wearing a Mask or Disguise to Evade Police</td>
+            <td>4</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>187</td>
+            <td>Murder</td>
+            <td>132</td>
+            <td>1500</td>
+          </tr>
+          <tr>
+            <td>188</td>
+            <td>Attempted Murder</td>
+            <td>56</td>
+            <td>950</td>
+          </tr>
+          <tr>
+            <td>211</td>
+            <td>Robbery</td>
+            <td>30</td>
+            <td>650</td>
+          </tr>
+          <tr>
+            <td>215</td>
+            <td>Carjacking</td>
+            <td>30</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>216</td>
+            <td>Rape</td>
+            <td>56</td>
+            <td>540</td>
+          </tr>
+          <tr>
+            <td>217</td>
+            <td>Lewd Or Dissolute Conduct In Public</td>
+            <td>12</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>218</td>
+            <td>Indecent Exposure</td>
+            <td>14</td>
+            <td>300</td>
+          </tr>
+          <tr>
+            <td>219</td>
+            <td>Sexual Assault</td>
+            <td>24</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>220</td>
+            <td>Sexual Battery</td>
+            <td>30</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>221</td>
+            <td>Prostitution</td>
+            <td>8</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>222</td>
+            <td>Solicitation of a Prostitute</td>
+            <td>8</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>223</td>
+            <td>Pandering / Pimping</td>
+            <td>20</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>224</td>
+            <td>Statutory Rape</td>
+            <td>18</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>225</td>
+            <td>Child Abuse</td>
+            <td>35</td>
+            <td>550</td>
+          </tr>
+          <tr>
+            <td>226</td>
+            <td>Possession of Child Pornography</td>
+            <td>65</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>227</td>
+            <td>Solicitation of a Minor</td>
+            <td>24</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>228</td>
+            <td>Minor Alcohol Violation</td>
+            <td>0</td>
+            <td>2500</td>
+          </tr>
+          <tr>
+            <td>229</td>
+            <td>Sale of Alcohol to a Minor</td>
+            <td>4</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>230</td>
+            <td>Animal Abuse / Cruelty</td>
+            <td>16</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <td>232</td>
+            <td>Sale of Tobacco to a Minor</td>
+            <td>4</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>301</td>
+            <td>Littering</td>
+            <td>0</td>
+            <td>300</td>
+          </tr>
+          <tr>
+            <td>302</td>
+            <td>Illegally Discharging a Firearm</td>
+            <td>4</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>303</td>
+            <td>Shooting At An Inhabited Dwelling Or Occupied Car</td>
+            <td>36</td>
+            <td>550</td>
+          </tr>
+          <tr>
+            <td>304</td>
+            <td>Possession of a Controlled Substance Other than Marijuana</td>
+            <td>4</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>305</td>
+            <td>Possession of a Controlled Substance Other than Marijuana with Intent To Sell</td>
+            <td>24</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>306</td>
+            <td>Possession of Drug Paraphernalia</td>
+            <td>4</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>307</td>
+            <td>Maintaining A Place For The Purpose Of Distribution</td>
+            <td>28</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>308</td>
+            <td>Manufacture of a Controlled Substance</td>
+            <td>48</td>
+            <td>550</td>
+          </tr>
+          <tr>
+            <td>309</td>
+            <td>Sale of a Controlled Substance Other than Marijuana</td>
+            <td>36</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>310</td>
+            <td>Sale of a Controlled Substance</td>
+            <td>14</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>311</td>
+            <td>Possession of an Open Container</td>
+            <td>0</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>312</td>
+            <td>Public Intoxication</td>
+            <td>4</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>313</td>
+            <td>Under The Influence of a Controlled Substance</td>
+            <td>5</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>314</td>
+            <td>Possession of Marijuana</td>
+            <td>6</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>315</td>
+            <td>Possession of an Unlicensed Firearm</td>
+            <td>40</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>316</td>
+            <td>Possession of a Destructive Device</td>
+            <td>30</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>317</td>
+            <td>Manufacture of a Destructive Device or Prohibited Weapon</td>
+            <td>32</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>318</td>
+            <td>Illegal Sale, Lease, or Transfer of a Firearm</td>
+            <td>60</td>
+            <td>800</td>
+          </tr>
+          <tr>
+            <td>319</td>
+            <td>Drive-By Shooting</td>
+            <td>16</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>320</td>
+            <td>Weapons License Violation</td>
+            <td>50</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>321</td>
+            <td>Failure to Report a Stolen Firearm</td>
+            <td>4</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>322</td>
+            <td>Illegal Distribution of Ammunition</td>
+            <td>30</td>
+            <td>550</td>
+          </tr>
+          <tr>
+            <td>323</td>
+            <td>Terrorism</td>
+            <td>1000</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>324</td>
+            <td>Treason</td>
+            <td>1000</td>
+            <td>10000</td>
+          </tr>
+          <tr>
+            <td>401</td>
+            <td>Unlawful Assembly</td>
+            <td>4</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>402</td>
+            <td>Incitement to Riot</td>
+            <td>20</td>
+            <td>450</td>
+          </tr>
+          <tr>
+            <td>403</td>
+            <td>Riot</td>
+            <td>8</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>404</td>
+            <td>Brandishing a Firearm</td>
+            <td>12</td>
+            <td>150</td>
+          </tr>
+          <tr>
+            <td>405</td>
+            <td>Brandishing a Deadly Weapon</td>
+            <td>20</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>406</td>
+            <td>Unauthorized Entry or Remaining on an Emergency Site</td>
+            <td>10</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>415</td>
+            <td>Disturbing the Peace</td>
+            <td>3</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>459</td>
+            <td>Burglary</td>
+            <td>20</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>501</td>
+            <td>Embezzlement</td>
+            <td>8</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>502</td>
+            <td>Arson</td>
+            <td>32</td>
+            <td>550</td>
+          </tr>
+          <tr>
+            <td>503</td>
+            <td>Possession of Burglary Tools</td>
+            <td>8</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>504</td>
+            <td>Forgery</td>
+            <td>6</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>505</td>
+            <td>Forgery of a State Document</td>
+            <td>15</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>506</td>
+            <td>Counterfeiting</td>
+            <td>12</td>
+            <td>124</td>
+          </tr>
+          <tr>
+            <td>507</td>
+            <td>Petty Theft</td>
+            <td>8</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>508</td>
+            <td>Grand Theft</td>
+            <td>15</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>509</td>
+            <td>Extortion</td>
+            <td>22</td>
+            <td>356</td>
+          </tr>
+          <tr>
+            <td>510</td>
+            <td>Receiving Stolen Property</td>
+            <td>6</td>
+            <td>70</td>
+          </tr>
+          <tr>
+            <td>511</td>
+            <td>Insurance Fraud</td>
+            <td>14</td>
+            <td>434</td>
+          </tr>
+          <tr>
+            <td>512</td>
+            <td>Trespass</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>513</td>
+            <td>Fraud</td>
+            <td>18</td>
+            <td>560</td>
+          </tr>
+          <tr>
+            <td>514</td>
+            <td>Vandalism</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>601</td>
+            <td>Bribery</td>
+            <td>25</td>
+            <td>240</td>
+          </tr>
+          <tr>
+            <td>602</td>
+            <td>Jury Tampering</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>603</td>
+            <td>Intimidating a Witness or Victim</td>
+            <td>20</td>
+            <td>250</td>
+          </tr>
+          <tr>
+            <td>604</td>
+            <td>Escape</td>
+            <td>40</td>
+            <td>650</td>
+          </tr>
+          <tr>
+            <td>605</td>
+            <td>Aiding in the Escape from State Custody</td>
+            <td>30</td>
+            <td>550</td>
+          </tr>
+          <tr>
+            <td>606</td>
+            <td>Perjury</td>
+            <td>16</td>
+            <td>168</td>
+          </tr>
+          <tr>
+            <td>607</td>
+            <td>Filing a False Report</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>608</td>
+            <td>Filing a False Complaint</td>
+            <td>8</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>609</td>
+            <td>Corruption of Public Duty</td>
+            <td>30</td>
+            <td>360</td>
+          </tr>
+          <tr>
+            <td>610</td>
+            <td>Obstruction of Justice</td>
+            <td>6</td>
+            <td>60</td>
+          </tr>
+          <tr>
+            <td>611</td>
+            <td>Resisting a Peace Officer</td>
+            <td>10</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <td>612</td>
+            <td>Failure To Pay A Fine</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>613</td>
+            <td>Failure to Identify to a Peace Officer</td>
+            <td>4</td>
+            <td>40</td>
+          </tr>
+          <tr>
+            <td>614</td>
+            <td>Impersonation of a State Employee</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>615</td>
+            <td>Making a False Report of an Emergency</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>616</td>
+            <td>Evidence Tampering</td>
+            <td>35</td>
+            <td>535</td>
+          </tr>
+          <tr>
+            <td>617</td>
+            <td>Introduction of Contraband</td>
+            <td>36</td>
+            <td>830</td>
+          </tr>
+          <tr>
+            <td>618</td>
+            <td>Violation of Parole</td>
+            <td>48</td>
+            <td>480</td>
+          </tr>
+          <tr>
+            <td>619</td>
+            <td>Voter Fraud / Voter Pandering</td>
+            <td>52</td>
+            <td>524</td>
+          </tr>
+          <tr>
+            <td>620</td>
+            <td>Corruption of Public Office</td>
+            <td>64</td>
+            <td>645</td>
+          </tr>
+          <tr>
+            <td>621</td>
+            <td>Contempt of Senate</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>622</td>
+            <td>Contempt of Court</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>623</td>
+            <td>Subpoena Violation</td>
+            <td>8</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>701</td>
+            <td>Reckless Driving</td>
+            <td>20</td>
+            <td>350</td>
+          </tr>
+          <tr>
+            <td>702</td>
+            <td>Felony Reckless Driving</td>
+            <td>28</td>
+            <td>540</td>
+          </tr>
+          <tr>
+            <td>703</td>
+            <td>Driving Under the Influence</td>
+            <td>24</td>
+            <td>246</td>
+          </tr>
+          <tr>
+            <td>704</td>
+            <td>Evading a Peace Officer</td>
+            <td>16</td>
+            <td>156</td>
+          </tr>
+          <tr>
+            <td>705</td>
+            <td>Reckless Evading of a Peace Officer</td>
+            <td>36</td>
+            <td>365</td>
+          </tr>
+          <tr>
+            <td>706</td>
+            <td>Hit and Run</td>
+            <td>35</td>
+            <td>464</td>
+          </tr>
+          <tr>
+            <td>801</td>
+            <td>Brandishing a Firearm</td>
+            <td>20</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <td>802</td>
+            <td>Discharging a Firearm in Public</td>
+            <td>20</td>
+            <td>500</td>
+          </tr>
+          <tr>
+            <td>803</td>
+            <td>Unlicensed Possession of a Deadly Weapon</td>
+            <td>20</td>
+            <td>760</td>
+          </tr>
+          <tr>
+            <td>804</td>
+            <td>Possession of an Unlcensed Firearm</td>
+            <td>25</td>
+            <td>850</td>
+          </tr>
+          <tr>
+            <td>805</td>
+            <td>Possession of an Illegal Firearm</td>
+            <td>40</td>
+            <td>600</td>
+          </tr>
+          <tr>
+            <td>806</td>
+            <td>Firearm Theft</td>
+            <td>50</td>
+            <td>930</td>
+          </tr>
+          <tr>
+            <td>807</td>
+            <td>Illegal Firearm Distribution</td>
+            <td>30</td>
+            <td>910</td>
+          </tr>
+          <!-- Sampai di sini data -->
+      </tbody>
+    </table>
+
+    <!-- Form untuk memasukkan Penal ID yang akan ditambahkan -->
+    <div class="calculator-form">
+      <h2>Tambahkan Penal ID ke Daftar</h2>
+      <input type="text" id="penalIdInput" placeholder="Masukkan Penal ID" />
+      <button onclick="addPenal()">Tambah</button>
+    </div>
+
+    <!-- Tabel penal yang telah dipilih -->
+    <table id="selectedPenalTable">
+      <thead>
+        <tr>
+          <th>Penal ID</th>
+          <th>Crime Description</th>
+          <th>Times</th>
+          <th>Fines</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Baris penal yang dipilih akan muncul di sini -->
+      </tbody>
+    </table>
+
+    <!-- Tampilan total hasil penjumlahan -->
+    <div id="totals">
+      Total Times: <span id="totalTimes">0 Minutes</span> | 
+      Total Fines: <span id="totalFines">$.0</span>
+    </div>
+
+    <footer style="text-align: center; margin-top: 20px; font-size: 14px; color: #555;">
+        &copy; 2025 Kratoz All Rights Reserved.
+      </footer>
+      
+
+    <!-- jQuery (wajib sebelum DataTables) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS (CDN) -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
