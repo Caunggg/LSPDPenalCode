@@ -179,9 +179,9 @@ const penalData = [
         <td>${item.desc}</td>
         <td>${item.times}</td>
         <td>${item.fines}</td>
-        <td><button onclick="removePenal(${item.id})">Hapus</button></td>
+        <td><button class="btn" onclick="removePenal(${item.id})">Hapus</button></td>
       `;
-      tbody.appendChild(row);
+      tbody.appendChild(row);      
     });
   
     // Menambahkan " Minutes" dan "$" ke total masing-masing
@@ -196,7 +196,6 @@ const penalData = [
       "pageLength": 10
     });
   });
-
 // Fungsi untuk menghapus semua penal code yang sudah ditambahkan
 function clearAllPenals() {
   if (confirm("Apakah Anda yakin ingin menghapus semua penal code?")) {
