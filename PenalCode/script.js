@@ -196,4 +196,11 @@ const penalData = [
       "pageLength": 10
     });
   });
-  
+
+// Fungsi untuk menghapus semua penal code yang sudah ditambahkan
+function clearAllPenals() {
+  if (confirm("Apakah Anda yakin ingin menghapus semua penal code?")) {
+    selectedPenals = [];
+    renderSelectedPenals();
+  }
+}
